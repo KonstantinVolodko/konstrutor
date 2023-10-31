@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="">
+    <title></title>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    
+    
+    
+    <!-- CSS only -->
+    
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    
+    
+    
+    <!-- CSS only -->
+    
+    
+</head>
+
+<body>
+    <svg style="display: none;">
+    
+        <symbol id="pointIco" viewBox="0 0 23 34">
+            <g>
+                <path
+                    d="M11.2453 0.00178504C17.2031 0.115642 22.0024 5.22122 22.0024 11.5073C22.0024 12.8316 21.7855 14.102 21.3861 15.2826C21.1749 15.9178 20.8896 16.523 20.5757 17.1162L11.9872 33.4157C11.5763 34.1948 10.5091 34.1948 10.0983 33.4157L1.51543 17.1222C1.20156 16.523 0.910524 15.9118 0.693671 15.2646C0.231431 13.8623 0.00887034 12.3343 0.11159 10.7403C0.499644 4.68789 5.46445 -0.106079 11.2453 0.00178504ZM14.7322 11.5074C14.7322 13.6453 13.0817 15.3785 11.0457 15.3785C9.00974 15.3785 7.35923 13.6453 7.35923 11.5074C7.35923 9.36939 9.00974 7.63623 11.0457 7.63623C13.0817 7.63623 14.7322 9.36939 14.7322 11.5074Z" />
+            </g>
+        </symbol>
+    
+        <symbol id="info" viewBox="0 0 24 24">
+            <g clip-path="url(#clip0_3441_1859)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22.5C14.7848 22.5 17.4555 21.3938 19.4246 19.4246C21.3938 17.4555 22.5 14.7848 22.5 12C22.5 9.21523 21.3938 6.54451 19.4246 4.57538C17.4555 2.60625 14.7848 1.5 12 1.5C9.21523 1.5 6.54451 2.60625 4.57538 4.57538C2.60625 6.54451 1.5 9.21523 1.5 12C1.5 14.7848 2.60625 17.4555 4.57538 19.4246C6.54451 21.3938 9.21523 22.5 12 22.5ZM12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2348 24 15.1826 24 12C24 8.8174 22.7357 5.76516 20.4853 3.51472C18.2348 1.26428 15.1826 0 12 0C8.8174 0 5.76516 1.26428 3.51472 3.51472C1.26428 5.76516 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51472 20.4853C5.76516 22.7357 8.8174 24 12 24Z" fill="black"/>
+                <path d="M10.5039 16.4997C10.5039 16.3027 10.5427 16.1077 10.6181 15.9257C10.6935 15.7437 10.804 15.5783 10.9432 15.439C11.0825 15.2997 11.2479 15.1892 11.4299 15.1139C11.6119 15.0385 11.8069 14.9997 12.0039 14.9997C12.2009 14.9997 12.3959 15.0385 12.5779 15.1139C12.7599 15.1892 12.9253 15.2997 13.0646 15.439C13.2039 15.5783 13.3143 15.7437 13.3897 15.9257C13.4651 16.1077 13.5039 16.3027 13.5039 16.4997C13.5039 16.8975 13.3459 17.279 13.0646 17.5603C12.7833 17.8417 12.4017 17.9997 12.0039 17.9997C11.6061 17.9997 11.2246 17.8417 10.9432 17.5603C10.6619 17.279 10.5039 16.8975 10.5039 16.4997ZM10.6509 7.49219C10.6309 7.30295 10.651 7.11163 10.7097 6.93063C10.7684 6.74963 10.8646 6.58301 10.9919 6.44157C11.1192 6.30013 11.2748 6.18703 11.4486 6.10961C11.6225 6.03219 11.8106 5.99219 12.0009 5.99219C12.1912 5.99219 12.3794 6.03219 12.5532 6.10961C12.727 6.18703 12.8826 6.30013 13.0099 6.44157C13.1372 6.58301 13.2334 6.74963 13.2921 6.93063C13.3508 7.11163 13.3709 7.30295 13.3509 7.49219L12.8259 12.7527C12.8083 12.9593 12.7137 13.1519 12.5609 13.2921C12.4082 13.4324 12.2083 13.5103 12.0009 13.5103C11.7935 13.5103 11.5936 13.4324 11.4409 13.2921C11.2881 13.1519 11.1935 12.9593 11.1759 12.7527L10.6509 7.49219Z" fill="black"/>
+                </g>
+        </symbol>
+    
+    </svg>
+    <div class="page">
+
+        <main>
+
+            <header class="header white-bg">
+                <div class="wrap">
+                    <a href="https://a-vision.space/" class="logo">
+                        <svg viewBox="0 0 201 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.4103 23.7508H7.20378L5.44746 28H0.74505L9.58331 8.17058H14.1157L22.9823 28H18.1666L16.4103 23.7508ZM14.9656 20.2665L11.8212 12.6747L8.67682 20.2665H14.9656Z" fill="black"></path>
+                            <path d="M70.0994 43.6611L61.2922 64.0078H56.6416L47.8634 43.6611H52.9501L59.1413 58.1945L65.4197 43.6611H70.0994ZM71.7983 43.6611H76.5071V64.0078H71.7983V43.6611ZM88.0211 64.3566C86.4128 64.3566 84.8528 64.1435 83.3414 63.7171C81.8493 63.2715 80.6479 62.6998 79.7371 62.0022L81.3358 58.4561C82.2078 59.0955 83.2445 59.609 84.4459 59.9966C85.6473 60.3842 86.8488 60.5779 88.0502 60.5779C89.3873 60.5779 90.3755 60.3842 91.015 59.9966C91.6545 59.5897 91.9742 59.0568 91.9742 58.3979C91.9742 57.9135 91.7804 57.5162 91.3929 57.2062C91.0247 56.8768 90.5402 56.6152 89.9395 56.4214C89.3582 56.2276 88.5637 56.0145 87.5561 55.7819C86.0058 55.4138 84.7366 55.0456 83.7483 54.6774C82.76 54.3092 81.9074 53.7182 81.1904 52.9043C80.4928 52.0905 80.144 51.0053 80.144 49.6489C80.144 48.4668 80.4638 47.401 81.1032 46.4515C81.7427 45.4826 82.7019 44.7172 83.9808 44.1552C85.2792 43.5933 86.8585 43.3123 88.7187 43.3123C90.017 43.3123 91.2863 43.4673 92.5265 43.7774C93.7666 44.0874 94.8518 44.5331 95.7819 45.1144L94.3286 48.6896C92.449 47.6239 90.5693 47.091 88.6897 47.091C87.372 47.091 86.3934 47.3041 85.7539 47.7304C85.1338 48.1568 84.8238 48.7187 84.8238 49.4163C84.8238 50.1139 85.1823 50.6371 85.8993 50.9859C86.6356 51.3153 87.7498 51.6448 89.2419 51.9742C90.7921 52.3424 92.0614 52.7105 93.0497 53.0787C94.0379 53.4469 94.8809 54.0282 95.5785 54.8227C96.2954 55.6172 96.6539 56.6927 96.6539 58.0491C96.6539 59.2118 96.3245 60.2776 95.6657 61.2465C95.0262 62.196 94.0573 62.9517 92.759 63.5137C91.4607 64.0756 89.8814 64.3566 88.0211 64.3566ZM99.8715 43.6611H104.58V64.0078H99.8715V43.6611ZM119.263 64.3566C117.15 64.3566 115.242 63.9012 113.536 62.9905C111.851 62.0797 110.523 60.8299 109.554 59.2409C108.605 57.6325 108.13 55.8304 108.13 53.8345C108.13 51.8385 108.605 50.0461 109.554 48.4571C110.523 46.8488 111.851 45.5892 113.536 44.6784C115.242 43.7677 117.15 43.3123 119.263 43.3123C121.375 43.3123 123.274 43.7677 124.96 44.6784C126.646 45.5892 127.973 46.8488 128.942 48.4571C129.911 50.0461 130.395 51.8385 130.395 53.8345C130.395 55.8304 129.911 57.6325 128.942 59.2409C127.973 60.8299 126.646 62.0797 124.96 62.9905C123.274 63.9012 121.375 64.3566 119.263 64.3566ZM119.263 60.3454C120.464 60.3454 121.549 60.0741 122.518 59.5315C123.487 58.9696 124.243 58.1945 124.785 57.2062C125.347 56.2179 125.628 55.094 125.628 53.8345C125.628 52.5749 125.347 51.451 124.785 50.4627C124.243 49.4745 123.487 48.709 122.518 48.1664C121.549 47.6045 120.464 47.3235 119.263 47.3235C118.061 47.3235 116.976 47.6045 116.007 48.1664C115.038 48.709 114.273 49.4745 113.711 50.4627C113.168 51.451 112.897 52.5749 112.897 53.8345C112.897 55.094 113.168 56.2179 113.711 57.2062C114.273 58.1945 115.038 58.9696 116.007 59.5315C116.976 60.0741 118.061 60.3454 119.263 60.3454ZM152.595 43.6611V64.0078H148.729L138.585 51.6545V64.0078H133.934V43.6611H137.829L147.944 56.0145V43.6611H152.595Z" fill="black"></path>
+                            <path d="M27.5 14.8281H143.875V35.3281M11.875 33.7911V54.8281H41.375" stroke="black" stroke-width="4.72129"></path>
+                        </svg>
+                    </a>
+                    <div class="burger">
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                        <div class="burger__line"></div>
+                    </div>
+                </div>
+                <menu class="menu">
+                    <div class="close">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.331577 0.331577C0.77368 -0.110526 1.49047 -0.110526 1.93257 0.331577L12 10.399L22.0674 0.331577C22.5095 -0.110526 23.2263 -0.110526 23.6684 0.331577C24.1105 0.77368 24.1105 1.49047 23.6684 1.93257L13.601 12L23.6684 22.0674C24.1105 22.5095 24.1105 23.2263 23.6684 23.6684C23.2263 24.1105 22.5095 24.1105 22.0674 23.6684L12 13.601L1.93257 23.6684C1.49047 24.1105 0.77368 24.1105 0.331577 23.6684C-0.110526 23.2263 -0.110526 22.5095 0.331577 22.0674L10.399 12L0.331577 1.93257C-0.110526 1.49047 -0.110526 0.77368 0.331577 0.331577Z" fill="black"></path>
+                        </svg>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="https://a-vision.space/our-partners/">Наши партнеры</a>
+                        </li>
+                        <li>
+                            <a href="https://a-vision.space/katalog/">каталог</a>
+                        </li>
+                        <li>
+                            <a href="https://a-vision.space/accessories-page/">АКСЕССУАРЫ</a>
+                        </li>
+                        <li>
+                            <a href="https://a-vision.space/construction/">КОНСТРУКТОР</a>
+                        </li>
+                        <li>
+                            <a href="https://a-vision.space/contact-page/">контакты</a>
+                        </li>
+                    </ul>
+                    <div class="menu__bot">
+                        <div>
+                            ООО “ЛИВИНГСТОУН”
+                        </div>
+                        <div>
+                            © 2023
+                        </div>
+                    </div>
+                </menu>
+                <div class="preload">
+            
+                </div>
+            </header>
+            <section class="constructor">
+                <h1>Конструктор</h1>
+            
+                <div class="constructor__content">
+                    <div class="constructor__content-visual">
+                        <canvas id="tableCanvas"></canvas>
+            
+                        <div class="final-price__container">
+                            <p>итоговая стоимость</p>
+                            <div>
+                                ₽
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="constructor__content-menu">
+                        <div class="constructor__menu-container --base">
+                            <h3>Основания</h3>
+                            <div class="constructor__menu-container-buttons">
+                                <button class="contour_p" value="КОНТУР П" data-base-key="regular">КОНТУР П</button>
+                                <button class="eco" value="ЭКО" data-base-key="regular">ЭЛЕГАНТ</button>
+                                <button class="contour_a" value="КОНТУР А" data-base-key="regular">КОНТУР А</button>
+                                <button class="art" value="АРТ" data-base-key="art">АРТ</button>
+                                <button class="contour_o" value="КОНТУР О" data-base-key="regular">КОНТУР О</button>
+                                <button class="cvant" value="КВАНТ" data-base-key="cvant">КВАНТ</button>
+                            </div>
+            
+                            <div class="constructor__menu-container-colors">
+                                <p>Цвет основания</p>
+                                <div class="constructor__menu-container-color-btns">
+                                    <button class="--white" value="белый"></button>
+                                    <button class="--light-gray" value="светло-серый"></button>
+                                    <button class="--dark-gray" value="темно-серый"></button>
+                                    <button class="--black" value="черный"></button>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-colors">
+                                <p>Цвет основания ral</p>
+                                <div class="constructor__menu-container-checkbox">
+                                    <span></span>
+                                    <input class="custom-checkbox" type="checkbox" id="Цвет основания ral"
+                                        name="Цвет основания ral">
+                                    <label for="Цвет основания ral"></label>
+                                </div>
+            
+                                <div class="info-container">
+                                    <svg>
+                                        <use href="#info"></use>
+                                    </svg>
+                                    <div class="info-container__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                            obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                            aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                        <!-- <div class="info-container__img">
+                                            <img src="/assets/images/info-egger.jpg" alt="#">
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="constructor__menu-container --table-top">
+                            <h3>Столешница</h3>
+                            <div class="constructor__menu-container-colors">
+                                <p>стандартный лдсп egger</p>
+                                <div class="constructor__menu-container-color-btns">
+                                    <button class="--white" value="белый"></button>
+                                    <button class="--light-gray" value="светло-серый"></button>
+                                    <button class="--dark-gray" value="темно-серый"></button>
+                                    <button class="--beige" value="бежевый"></button>
+                                    <button class="--brown" value="коричневый"></button>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-colors">
+                                <p>лдсп egger декор (под заказ)</p>
+                                <div class="constructor__menu-container-checkbox egger">
+                                    <span></span>
+                                    <input class="custom-checkbox" type="checkbox" id="egger-input" name="лдсп egger"
+                                        value="10.900">
+                                    <label for="egger-input"></label>
+                                </div>
+            
+                                <div class="info-container">
+                                    <svg>
+                                        <use href="#info"></use>
+                                    </svg>
+                                    <div class="info-container__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                            obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                            aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                        <!-- <div class="info-container__img">
+                                            <img src="/assets/images/info-egger.jpg" alt="#">
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-colors">
+                                <p>окрашенный мдф по ral / ncs</p>
+                                <div class="constructor__menu-container-checkbox ncs">
+                                    <span></span>
+                                    <input class="custom-checkbox" type="checkbox" id="ncs-input" name="окрашенный мдф по ral / ncs"
+                                        value="8.900">
+                                    <label for="ncs-input"></label>
+                                </div>
+            
+                                <div class="info-container">
+                                    <svg>
+                                        <use href="#info"></use>
+                                    </svg>
+                                    <div class="info-container__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                            obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                            aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                        <!-- <div class="info-container__img">
+                                            <img src="/assets/images/info-egger.jpg" alt="#">
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-colors">
+                                <p>шпонированный мдф</p>
+                                <div class="constructor__menu-container-checkbox mdf">
+                                    <span></span>
+                                    <input class="custom-checkbox" type="checkbox" id="mdf-input" name="шпонированный мдф"
+                                        value="7.900">
+                                    <label for="mdf-input"></label>
+                                </div>
+            
+                                <div class="info-container">
+                                    <svg>
+                                        <use href="#info"></use>
+                                    </svg>
+                                    <div class="info-container__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                            obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                            aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                        <!-- <div class="info-container__img">
+                                            <img src="/assets/images/info-egger.jpg" alt="#">
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="constructor__menu-container">
+                            <h3>шумоизоляция</h3>
+            
+                            <div class="constructor__menu-container-helper --soundproofing-front">
+                                <div class="constructor__menu-container-colors">
+                                    <p>Шумозоляционный экран фронтальный</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="soundproofing-screen-front-input"
+                                            name="Шумозоляционный экран фронтальный" value="9.900">
+                                        <label for="soundproofing-screen-front-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет экрана</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--beige" value="бежевый"></button>
+                                        <button class="--brown" value="коричневый"></button>
+                                        <button class="--red" value="красный"></button>
+                                        <button class="--blue" value="синий"></button>
+                                        <button class="--green" value="зеленый"></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --soundproofing-side">
+                                <div class="constructor__menu-container-colors">
+                                    <p>Шумозоляционный экран боковой</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="soundproofing-screen-side-input"
+                                            name="Шумозоляционный экран боковой" value="9.000">
+                                        <label for="soundproofing-screen-side-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет экрана</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--beige" value="бежевый"></button>
+                                        <button class="--brown" value="коричневый"></button>
+                                        <button class="--red" value="красный"></button>
+                                        <button class="--blue" value="синий"></button>
+                                        <button class="--green" value="зеленый"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="constructor__menu-container">
+                            <h3>дополнительно</h3>
+                            <div class="constructor__menu-container-helper --system-unit-suspension">
+                                <div class="constructor__menu-container-colors">
+                                    <p>подвес системного блока</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="system-unit-suspension-input"
+                                            name="подвес системного блока" value="2.900">
+                                        <label for="system-unit-suspension-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет подвеса</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--black" value="черный"></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --cable-channel-a">
+                                <div class="constructor__menu-container-colors">
+                                    <p>кабель-канал А</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="cable-channel-a-input"
+                                            name="кабель-канал А" value="2.500">
+                                        <label for="cable-channel-a-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет кабель-канала</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--black" value="черный"></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --cable-channel-b">
+                                <div class="constructor__menu-container-colors">
+                                    <p>кабель-канал Б</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="cable-channel-b-input"
+                                            name="кабель-канал Б" value="1.800">
+                                        <label for="cable-channel-b-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет кабель-канала</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--black" value="черный"></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --cable-tray">
+                                <div class="constructor__menu-container-colors">
+                                    <p>лоток для кабелей</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="cable-tray-input"
+                                            name="лоток для кабелей" value="1.600">
+                                        <label for="cable-tray-input"></label>
+                                    </div>
+                                </div>
+            
+                                <div class="constructor__menu-container-colors --disabled">
+                                    <p>цвет лотка</p>
+                                    <div class="constructor__menu-container-color-btns">
+                                        <button class="--light-gray" value="светло-серый"></button>
+                                        <button class="--dark-gray" value="темно-серый"></button>
+                                        <button class="--black" value="черный"></button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --cutout-for-wires">
+                                <div class="constructor__menu-container-colors">
+                                    <p>отверстие для пропуска кабеля</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="cutout-for-wires-input"
+                                            name="вырез для проводов" value="1.600">
+                                        <label for="cutout-for-wires-input"></label>
+                                    </div>
+            
+                                    <div class="info-container">
+                                        <svg>
+                                            <use href="#info"></use>
+                                        </svg>
+                                        <div class="info-container__content">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                            <!-- <div class="info-container__img">
+                                                <img src="/assets/images/info-egger.jpg" alt="#">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --socket-block">
+                                <div class="constructor__menu-container-colors">
+                                    <p>блок розеток настольный</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="socket-block-input" name="блок розеток"
+                                            value="1.900">
+                                        <label for="socket-block-input"></label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="constructor__menu-container-helper --wireless-charger">
+                                <div class="constructor__menu-container-colors">
+                                    <p>беспроводная зарядка</p>
+                                    <div class="constructor__menu-container-checkbox">
+                                        <span></span>
+                                        <input class="custom-checkbox" type="checkbox" id="wireless-charger-input"
+                                            name="беспроводная зарядка" value="3.200">
+                                        <label for="wireless-charger-input"></label>
+                                    </div>
+            
+                                    <div class="info-container">
+                                        <svg>
+                                            <use href="#info"></use>
+                                        </svg>
+            
+                                        <div class="info-container__content">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                            <!-- <div class="info-container__img">
+                                                <img src="/assets/images/info-egger.jpg" alt="#">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="constructor__menu-container --form-button">
+                            <button>связаться с нами</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="constructor-modal" class="constructor-modal">
+                    <form class="constructor-modal__content" method="post">
+                        <span class="close">&times;</span>
+                        <h2>Оставить заявку</h2>
+                        <div class="constructor-modal__helper-for-constructor">
+                            <input type="text" name="Вид основания" id="base">
+                            <input type="text" name="Цвет основания" id="base-color">
+            
+                            <input type="text" name="Цвет основания RAL" id="base-ral-color">
+            
+                            <input type="text" name="Цвет столешницы" id="table-top-color">
+                            <input type="text" name="ЛДСП egger декор (под заказ)" id="egger">
+                            <input type="text" name="Окрашенный МДФ по RAL / NCS" id="ncs">
+                            <input type="text" name="Шпонированный МДФ" id="mdf">
+            
+                            <input type="text" name="Шумозоляционный экран фронтальный" id="soundproofing-screen-front">
+                            <input type="text" name="Шумоизоляционный экран фронтальный цвет" id="soundproofing-screen-front-color">
+            
+                            <input type="text" name="Шумозоляционный экран боковой" id="soundproofing-screen-side">
+                            <input type="text" name="Шумозоляционный экран боковой цвет" id="soundproofing-screen-side-color">
+            
+                            <input type="text" name="Подвес системного блока" id="system-unit-suspension">
+                            <input type="text" name="Подвес системного блока цвет" id="system-unit-suspension-color">
+            
+                            <input type="text" name="Кабель-канал А" id="cable-channel-a">
+                            <input type="text" name="Кабель-канал А цвет" id="cable-channel-a-color">
+            
+                            <input type="text" name="Кабель-канал Б" id="cable-channel-b">
+                            <input type="text" name="Кабель-канал Б цвет" id="cable-channel-b-color">
+            
+                            <input type="text" name="Лоток для кабелей" id="cable-tray">
+                            <input type="text" name="Лоток для кабелей цвет" id="cable-tray-color">
+            
+                            <input type="text" name="Отверстие для пропуска кабеля" id="cutout-for-wires">
+            
+                            <input type="text" name="Блок розеток настольный" id="socket-block">
+            
+                            <input type="text" name="Беспроводная зарядка" id="wireless-charger">
+            
+                            <input type="text" name="Финальная цена" id="final-price">
+                        </div>
+            
+                        <div class="constructor-modal__data">
+                            <p>Имя:</p>
+                            <input type="text" name="name" id="name">
+            
+                            <p>Телефон:</p>
+                            <input type="tel" name="phone" id="phone">
+            
+                            <p>Е-Mail:</p>
+                            <input type="email" name="e-mail" id="e-mail">
+            
+                            <p>Комментарий:</p>
+                            <textarea name="comment"></textarea>
+            
+                            <div class="constructor-modal__checkbox">
+                                <input class="constructor-modal__custom-checkbox" type="checkbox" id="accept" name="accept"
+                                    value="accept">
+                                <label for="accept">Даю согласие на обработку персональных данных</label>
+                            </div>
+            
+                            <button type="submit" disabled>
+                                Отправить
+                            </button>
+            
+                            <div class="error-container">
+                                <div class="eroor-container__complite">
+                                    Заявка успешно отправлена
+                                </div>
+            
+                                <div class="error-container__error">
+                                    Проверьте правильность введённых данных
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="wrap">
+                    <div class="footer__top">
+                        <a href="/" class="logo">
+                            <svg viewBox="0 0 201 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.4103 23.7508H7.20378L5.44746 28H0.74505L9.58331 8.17058H14.1157L22.9823 28H18.1666L16.4103 23.7508ZM14.9656 20.2665L11.8212 12.6747L8.67682 20.2665H14.9656Z" fill="black"></path>
+                                <path d="M70.0994 43.6611L61.2922 64.0078H56.6416L47.8634 43.6611H52.9501L59.1413 58.1945L65.4197 43.6611H70.0994ZM71.7983 43.6611H76.5071V64.0078H71.7983V43.6611ZM88.0211 64.3566C86.4128 64.3566 84.8528 64.1435 83.3414 63.7171C81.8493 63.2715 80.6479 62.6998 79.7371 62.0022L81.3358 58.4561C82.2078 59.0955 83.2445 59.609 84.4459 59.9966C85.6473 60.3842 86.8488 60.5779 88.0502 60.5779C89.3873 60.5779 90.3755 60.3842 91.015 59.9966C91.6545 59.5897 91.9742 59.0568 91.9742 58.3979C91.9742 57.9135 91.7804 57.5162 91.3929 57.2062C91.0247 56.8768 90.5402 56.6152 89.9395 56.4214C89.3582 56.2276 88.5637 56.0145 87.5561 55.7819C86.0058 55.4138 84.7366 55.0456 83.7483 54.6774C82.76 54.3092 81.9074 53.7182 81.1904 52.9043C80.4928 52.0905 80.144 51.0053 80.144 49.6489C80.144 48.4668 80.4638 47.401 81.1032 46.4515C81.7427 45.4826 82.7019 44.7172 83.9808 44.1552C85.2792 43.5933 86.8585 43.3123 88.7187 43.3123C90.017 43.3123 91.2863 43.4673 92.5265 43.7774C93.7666 44.0874 94.8518 44.5331 95.7819 45.1144L94.3286 48.6896C92.449 47.6239 90.5693 47.091 88.6897 47.091C87.372 47.091 86.3934 47.3041 85.7539 47.7304C85.1338 48.1568 84.8238 48.7187 84.8238 49.4163C84.8238 50.1139 85.1823 50.6371 85.8993 50.9859C86.6356 51.3153 87.7498 51.6448 89.2419 51.9742C90.7921 52.3424 92.0614 52.7105 93.0497 53.0787C94.0379 53.4469 94.8809 54.0282 95.5785 54.8227C96.2954 55.6172 96.6539 56.6927 96.6539 58.0491C96.6539 59.2118 96.3245 60.2776 95.6657 61.2465C95.0262 62.196 94.0573 62.9517 92.759 63.5137C91.4607 64.0756 89.8814 64.3566 88.0211 64.3566ZM99.8715 43.6611H104.58V64.0078H99.8715V43.6611ZM119.263 64.3566C117.15 64.3566 115.242 63.9012 113.536 62.9905C111.851 62.0797 110.523 60.8299 109.554 59.2409C108.605 57.6325 108.13 55.8304 108.13 53.8345C108.13 51.8385 108.605 50.0461 109.554 48.4571C110.523 46.8488 111.851 45.5892 113.536 44.6784C115.242 43.7677 117.15 43.3123 119.263 43.3123C121.375 43.3123 123.274 43.7677 124.96 44.6784C126.646 45.5892 127.973 46.8488 128.942 48.4571C129.911 50.0461 130.395 51.8385 130.395 53.8345C130.395 55.8304 129.911 57.6325 128.942 59.2409C127.973 60.8299 126.646 62.0797 124.96 62.9905C123.274 63.9012 121.375 64.3566 119.263 64.3566ZM119.263 60.3454C120.464 60.3454 121.549 60.0741 122.518 59.5315C123.487 58.9696 124.243 58.1945 124.785 57.2062C125.347 56.2179 125.628 55.094 125.628 53.8345C125.628 52.5749 125.347 51.451 124.785 50.4627C124.243 49.4745 123.487 48.709 122.518 48.1664C121.549 47.6045 120.464 47.3235 119.263 47.3235C118.061 47.3235 116.976 47.6045 116.007 48.1664C115.038 48.709 114.273 49.4745 113.711 50.4627C113.168 51.451 112.897 52.5749 112.897 53.8345C112.897 55.094 113.168 56.2179 113.711 57.2062C114.273 58.1945 115.038 58.9696 116.007 59.5315C116.976 60.0741 118.061 60.3454 119.263 60.3454ZM152.595 43.6611V64.0078H148.729L138.585 51.6545V64.0078H133.934V43.6611H137.829L147.944 56.0145V43.6611H152.595Z" fill="black"></path>
+                                <path d="M27.5 14.8281H143.875V35.3281M11.875 33.7911V54.8281H41.375" stroke="black" stroke-width="4.72129"></path>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="https://a-vision.space/construction/">Наши партнеры</a>
+                            </li>
+                            <li>
+                                <a href="https://a-vision.space/katalog/">каталог</a>
+                            </li>
+                            <li>
+                                <a href="https://a-vision.space/accessories-page/">АКСЕССУАРЫ</a>
+                            </li>
+                            <li>
+                                <a href="https://a-vision.space/construction/">КОНСТРУКТОР</a>
+                            </li>
+                            <li>
+                                <a href="https://a-vision.space/contact-page/">контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__bot">
+                        <div class="copyright">
+                            © 2023 ООО “ЛИВИНГСТОУН”
+                        </div>
+                        <div class="footer__info">
+                            г. Минск, пр. Победителей, 125 <a href="tel:+375 (29) 348-67-10">+375 (29) 348-67-10</a><span>,</span> <a href="tel:+7 (995) 316-67-10">+7 (995) 316-67-10</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script> -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+
+</html>

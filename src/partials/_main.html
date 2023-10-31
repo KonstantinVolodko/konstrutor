@@ -1,0 +1,439 @@
+<section class="constructor">
+    <h1>Конструктор</h1>
+
+    <div class="constructor__content">
+        <div class="constructor__content-visual">
+            <canvas id="tableCanvas"></canvas>
+
+            <div class="final-price__container">
+                <p>итоговая стоимость</p>
+                <div>
+                    ₽
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="constructor__content-menu">
+            <div class="constructor__menu-container --base">
+                <h3>Основания</h3>
+                <div class="constructor__menu-container-buttons">
+                    <button class="contour_p" value="КОНТУР П" data-base-key="regular">КОНТУР П</button>
+                    <button class="eco" value="ЭКО" data-base-key="regular">ЭЛЕГАНТ</button>
+                    <button class="contour_a" value="КОНТУР А" data-base-key="regular">КОНТУР А</button>
+                    <button class="art" value="АРТ" data-base-key="art">АРТ</button>
+                    <button class="contour_o" value="КОНТУР О" data-base-key="regular">КОНТУР О</button>
+                    <button class="cvant" value="КВАНТ" data-base-key="cvant">КВАНТ</button>
+                </div>
+
+                <div class="constructor__menu-container-colors">
+                    <p>Цвет основания</p>
+                    <div class="constructor__menu-container-color-btns">
+                        <button class="--white" value="белый"></button>
+                        <button class="--light-gray" value="светло-серый"></button>
+                        <button class="--dark-gray" value="темно-серый"></button>
+                        <button class="--black" value="черный"></button>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-colors">
+                    <p>Цвет основания ral</p>
+                    <div class="constructor__menu-container-checkbox">
+                        <span></span>
+                        <input class="custom-checkbox" type="checkbox" id="Цвет основания ral"
+                            name="Цвет основания ral">
+                        <label for="Цвет основания ral"></label>
+                    </div>
+
+                    <div class="info-container">
+                        <svg>
+                            <use href="#info"></use>
+                        </svg>
+                        <div class="info-container__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                            <!-- <div class="info-container__img">
+                                <img src="/assets/images/info-egger.jpg" alt="#">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="constructor__menu-container --table-top">
+                <h3>Столешница</h3>
+                <div class="constructor__menu-container-colors">
+                    <p>стандартный лдсп egger</p>
+                    <div class="constructor__menu-container-color-btns">
+                        <button class="--white" value="белый"></button>
+                        <button class="--light-gray" value="светло-серый"></button>
+                        <button class="--dark-gray" value="темно-серый"></button>
+                        <button class="--beige" value="бежевый"></button>
+                        <button class="--brown" value="коричневый"></button>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-colors">
+                    <p>лдсп egger декор (под заказ)</p>
+                    <div class="constructor__menu-container-checkbox egger">
+                        <span></span>
+                        <input class="custom-checkbox" type="checkbox" id="egger-input" name="лдсп egger"
+                            value="10.900">
+                        <label for="egger-input"></label>
+                    </div>
+
+                    <div class="info-container">
+                        <svg>
+                            <use href="#info"></use>
+                        </svg>
+                        <div class="info-container__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                            <!-- <div class="info-container__img">
+                                <img src="/assets/images/info-egger.jpg" alt="#">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-colors">
+                    <p>окрашенный мдф по ral / ncs</p>
+                    <div class="constructor__menu-container-checkbox ncs">
+                        <span></span>
+                        <input class="custom-checkbox" type="checkbox" id="ncs-input" name="окрашенный мдф по ral / ncs"
+                            value="8.900">
+                        <label for="ncs-input"></label>
+                    </div>
+
+                    <div class="info-container">
+                        <svg>
+                            <use href="#info"></use>
+                        </svg>
+                        <div class="info-container__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                            <!-- <div class="info-container__img">
+                                <img src="/assets/images/info-egger.jpg" alt="#">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-colors">
+                    <p>шпонированный мдф</p>
+                    <div class="constructor__menu-container-checkbox mdf">
+                        <span></span>
+                        <input class="custom-checkbox" type="checkbox" id="mdf-input" name="шпонированный мдф"
+                            value="7.900">
+                        <label for="mdf-input"></label>
+                    </div>
+
+                    <div class="info-container">
+                        <svg>
+                            <use href="#info"></use>
+                        </svg>
+                        <div class="info-container__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                aliquam voluptate animi at voluptatem odio similique quis.</p>
+                            <!-- <div class="info-container__img">
+                                <img src="/assets/images/info-egger.jpg" alt="#">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="constructor__menu-container">
+                <h3>шумоизоляция</h3>
+
+                <div class="constructor__menu-container-helper --soundproofing-front">
+                    <div class="constructor__menu-container-colors">
+                        <p>Шумозоляционный экран фронтальный</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="soundproofing-screen-front-input"
+                                name="Шумозоляционный экран фронтальный" value="9.900">
+                            <label for="soundproofing-screen-front-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет экрана</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--beige" value="бежевый"></button>
+                            <button class="--brown" value="коричневый"></button>
+                            <button class="--red" value="красный"></button>
+                            <button class="--blue" value="синий"></button>
+                            <button class="--green" value="зеленый"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --soundproofing-side">
+                    <div class="constructor__menu-container-colors">
+                        <p>Шумозоляционный экран боковой</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="soundproofing-screen-side-input"
+                                name="Шумозоляционный экран боковой" value="9.000">
+                            <label for="soundproofing-screen-side-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет экрана</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--beige" value="бежевый"></button>
+                            <button class="--brown" value="коричневый"></button>
+                            <button class="--red" value="красный"></button>
+                            <button class="--blue" value="синий"></button>
+                            <button class="--green" value="зеленый"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="constructor__menu-container">
+                <h3>дополнительно</h3>
+                <div class="constructor__menu-container-helper --system-unit-suspension">
+                    <div class="constructor__menu-container-colors">
+                        <p>подвес системного блока</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="system-unit-suspension-input"
+                                name="подвес системного блока" value="2.900">
+                            <label for="system-unit-suspension-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет подвеса</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--black" value="черный"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --cable-channel-a">
+                    <div class="constructor__menu-container-colors">
+                        <p>кабель-канал А</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="cable-channel-a-input"
+                                name="кабель-канал А" value="2.500">
+                            <label for="cable-channel-a-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет кабель-канала</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--black" value="черный"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --cable-channel-b">
+                    <div class="constructor__menu-container-colors">
+                        <p>кабель-канал Б</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="cable-channel-b-input"
+                                name="кабель-канал Б" value="1.800">
+                            <label for="cable-channel-b-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет кабель-канала</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--black" value="черный"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --cable-tray">
+                    <div class="constructor__menu-container-colors">
+                        <p>лоток для кабелей</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="cable-tray-input"
+                                name="лоток для кабелей" value="1.600">
+                            <label for="cable-tray-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="constructor__menu-container-colors --disabled">
+                        <p>цвет лотка</p>
+                        <div class="constructor__menu-container-color-btns">
+                            <button class="--light-gray" value="светло-серый"></button>
+                            <button class="--dark-gray" value="темно-серый"></button>
+                            <button class="--black" value="черный"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --cutout-for-wires">
+                    <div class="constructor__menu-container-colors">
+                        <p>отверстие для пропуска кабеля</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="cutout-for-wires-input"
+                                name="вырез для проводов" value="1.600">
+                            <label for="cutout-for-wires-input"></label>
+                        </div>
+
+                        <div class="info-container">
+                            <svg>
+                                <use href="#info"></use>
+                            </svg>
+                            <div class="info-container__content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                    obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                    aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                <!-- <div class="info-container__img">
+                                    <img src="/assets/images/info-egger.jpg" alt="#">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --socket-block">
+                    <div class="constructor__menu-container-colors">
+                        <p>блок розеток настольный</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="socket-block-input" name="блок розеток"
+                                value="1.900">
+                            <label for="socket-block-input"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constructor__menu-container-helper --wireless-charger">
+                    <div class="constructor__menu-container-colors">
+                        <p>беспроводная зарядка</p>
+                        <div class="constructor__menu-container-checkbox">
+                            <span></span>
+                            <input class="custom-checkbox" type="checkbox" id="wireless-charger-input"
+                                name="беспроводная зарядка" value="3.200">
+                            <label for="wireless-charger-input"></label>
+                        </div>
+
+                        <div class="info-container">
+                            <svg>
+                                <use href="#info"></use>
+                            </svg>
+
+                            <div class="info-container__content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, provident architecto
+                                    obcaecati sapiente aliquid totam distinctio, explicabo non vitae quidem nobis ipsa
+                                    aliquam voluptate animi at voluptatem odio similique quis.</p>
+                                <!-- <div class="info-container__img">
+                                    <img src="/assets/images/info-egger.jpg" alt="#">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="constructor__menu-container --form-button">
+                <button>связаться с нами</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="constructor-modal" class="constructor-modal">
+        <form class="constructor-modal__content" method="post">
+            <span class="close">&times;</span>
+            <h2>Оставить заявку</h2>
+            <div class="constructor-modal__helper-for-constructor">
+                <input type="text" name="Вид основания" id="base">
+                <input type="text" name="Цвет основания" id="base-color">
+
+                <input type="text" name="Цвет основания RAL" id="base-ral-color">
+
+                <input type="text" name="Цвет столешницы" id="table-top-color">
+                <input type="text" name="ЛДСП egger декор (под заказ)" id="egger">
+                <input type="text" name="Окрашенный МДФ по RAL / NCS" id="ncs">
+                <input type="text" name="Шпонированный МДФ" id="mdf">
+
+                <input type="text" name="Шумозоляционный экран фронтальный" id="soundproofing-screen-front">
+                <input type="text" name="Шумоизоляционный экран фронтальный цвет" id="soundproofing-screen-front-color">
+
+                <input type="text" name="Шумозоляционный экран боковой" id="soundproofing-screen-side">
+                <input type="text" name="Шумозоляционный экран боковой цвет" id="soundproofing-screen-side-color">
+
+                <input type="text" name="Подвес системного блока" id="system-unit-suspension">
+                <input type="text" name="Подвес системного блока цвет" id="system-unit-suspension-color">
+
+                <input type="text" name="Кабель-канал А" id="cable-channel-a">
+                <input type="text" name="Кабель-канал А цвет" id="cable-channel-a-color">
+
+                <input type="text" name="Кабель-канал Б" id="cable-channel-b">
+                <input type="text" name="Кабель-канал Б цвет" id="cable-channel-b-color">
+
+                <input type="text" name="Лоток для кабелей" id="cable-tray">
+                <input type="text" name="Лоток для кабелей цвет" id="cable-tray-color">
+
+                <input type="text" name="Отверстие для пропуска кабеля" id="cutout-for-wires">
+
+                <input type="text" name="Блок розеток настольный" id="socket-block">
+
+                <input type="text" name="Беспроводная зарядка" id="wireless-charger">
+
+                <input type="text" name="Финальная цена" id="final-price">
+            </div>
+
+            <div class="constructor-modal__data">
+                <p>Имя:</p>
+                <input type="text" name="name" id="name">
+
+                <p>Телефон:</p>
+                <input type="tel" name="phone" id="phone">
+
+                <p>Е-Mail:</p>
+                <input type="email" name="e-mail" id="e-mail">
+
+                <p>Комментарий:</p>
+                <textarea name="comment"></textarea>
+
+                <div class="constructor-modal__checkbox">
+                    <input class="constructor-modal__custom-checkbox" type="checkbox" id="accept" name="accept"
+                        value="accept">
+                    <label for="accept">Даю согласие на обработку персональных данных</label>
+                </div>
+
+                <button type="submit" disabled>
+                    Отправить
+                </button>
+
+                <div class="error-container">
+                    <div class="eroor-container__complite">
+                        Заявка успешно отправлена
+                    </div>
+
+                    <div class="error-container__error">
+                        Проверьте правильность введённых данных
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
