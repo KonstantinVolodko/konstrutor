@@ -7232,7 +7232,7 @@ body {
 .constructor__menu-container-buttons button {
     background: transparent;
     border: 0.15rem solid #000;
-    width: 48.2%;
+    width: 48.7%;
     height: 4.6rem;
     font-family: Montserrat;
     font-size: 1.4rem;
@@ -7714,7 +7714,7 @@ body.constructor-modal-open {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 1rem 0.8rem;
     position: absolute;
     top: -14.5rem;
     left: -30rem;

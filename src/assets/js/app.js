@@ -716,6 +716,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectedBase2 = this.dataset.baseKey;
                 baseInput.value = this.value; // Устанавливаем значение кнопки в input с id="base"
 
+                const cableTrayCheckbox = document.querySelector('.--cable-tray .custom-checkbox');
+                if (cableTrayCheckbox && cableTrayCheckbox.checked) {
+                    // Если чекбокс включен, обновляем картинку для кабельного лотка
+                    const cableTrayColorButton = document.querySelector('.--cable-tray .constructor__menu-container-color-btns .--light-gray');
+                    if (cableTrayColorButton) {
+                        cableTrayColorButton.click();
+                    }
+                }
+
+                const systemUnitSuspensionCheckbox = document.querySelector('.--system-unit-suspension .custom-checkbox');
+                if (systemUnitSuspensionCheckbox && systemUnitSuspensionCheckbox.checked) {
+                    // Если чекбокс включен, обновляем картинку для кабельного лотка
+                    const systemUnitSuspensionColorButton = document.querySelector('.--system-unit-suspension .constructor__menu-container-color-btns button');
+                    if (systemUnitSuspensionColorButton) {
+                        systemUnitSuspensionColorButton.click();
+                    }
+                }
+
+                const cableChannelACheckbox = document.querySelector('.--cable-channel-a .custom-checkbox');
+                if (cableChannelACheckbox && cableChannelACheckbox.checked) {
+                    // Если чекбокс включен, обновляем картинку для кабельного лотка
+                    const cableChannelACheckboxColorButton = document.querySelector('.--cable-channel-a .constructor__menu-container-color-btns button');
+                    if (cableChannelACheckboxColorButton) {
+                        cableChannelACheckboxColorButton.click();
+                    }
+                }
+
+                const cableChannelBCheckbox = document.querySelector('.--cable-channel-b .custom-checkbox');
+                if (cableChannelBCheckbox && cableChannelBCheckbox.checked) {
+                    // Если чекбокс включен, обновляем картинку для кабельного лотка
+                    const cableChannelBCheckboxColorButton = document.querySelector('.--cable-channel-b .constructor__menu-container-color-btns button');
+                    if (cableChannelBCheckboxColorButton) {
+                        cableChannelBCheckboxColorButton.click();
+                    }
+                }
+
                 // Нажимаем на --light-gray для выбранной основы
                 const nextColorsContainer = this.parentElement.nextElementSibling.querySelector('.--base .constructor__menu-container-color-btns .--white');
                 if (nextColorsContainer) {
