@@ -693,6 +693,11 @@ form.sent .wpcf7-response-output {
     line-height: initial;
     color: #000;
     text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header .menu ul li a:hover {
+    text-decoration: underline;
 }
 
 .header .menu__bot {
@@ -1787,6 +1792,11 @@ body:not(.home) .header {
     font-size: 1.4rem;
     line-height: 2rem;
     color: #000;
+    text-decoration: none;
+}
+
+.footer__top ul li a:hover {
+    text-decoration: underline;
 }
 
 .footer__bot {
@@ -1816,6 +1826,11 @@ body:not(.home) .header {
     font-size: 1.6rem;
     line-height: 1.7rem;
     color: #000;
+    text-decoration: none;
+}
+
+.footer__info a:hover {
+    text-decoration: underline;
 }
 
 .mobile {
@@ -1941,6 +1956,11 @@ body:not(.home) .header {
         font-weight: 300;
         font-size: 2.4rem;
         line-height: 3.2rem;
+        text-decoration: none;
+    }
+
+    .header .menu ul li a:hover {
+        text-decoration: underline;
     }
 
     .header .burger {

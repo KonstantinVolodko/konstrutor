@@ -425,6 +425,10 @@ document.addEventListener("DOMContentLoaded", () => {
         systemUnitSuspensionForArtDarkGray: { src: './assets/images/system-unit-suspension/forArt/dark-gray/system-unit-suspension.png', image: new Image() },
         systemUnitSuspensionForArtBlack: { src: './assets/images/system-unit-suspension/forArt/black/system-unit-suspension.png', image: new Image() },
 
+        systemUnitSuspensionForCvantLightGray: { src: './assets/images/system-unit-suspension/forCvant/light-gray/system-unit-suspension.png', image: new Image() },
+        systemUnitSuspensionForCvantDarkGray: { src: './assets/images/system-unit-suspension/forCvant/dark-gray/system-unit-suspension.png', image: new Image() },
+        systemUnitSuspensionForCvantBlack: { src: './assets/images/system-unit-suspension/forCvant/black/system-unit-suspension.png', image: new Image() },
+
         systemUnitSuspensionRegularLightGray: { src: './assets/images/system-unit-suspension/regular/light-gray/system-unit-suspension.png', image: new Image() },
         systemUnitSuspensionRegularDarkGray: { src: './assets/images/system-unit-suspension/regular/dark-gray/system-unit-suspension.png', image: new Image() },
         systemUnitSuspensionRegularBlack: { src: './assets/images/system-unit-suspension/regular/black/system-unit-suspension.png', image: new Image() },
@@ -579,9 +583,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         'cvant': {
-            '--light-gray': 'systemUnitSuspensionForArtLightGray',
-            '--dark-gray': 'systemUnitSuspensionForArtDarkGray',
-            '--black': 'systemUnitSuspensionForArtBlack',
+            '--light-gray': 'systemUnitSuspensionForCvantLightGray',
+            '--dark-gray': 'systemUnitSuspensionForCvantDarkGray',
+            '--black': 'systemUnitSuspensionForCvantBlack',
         },
     };
 
