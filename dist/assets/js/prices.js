@@ -9,29 +9,29 @@ const  globalPrices = {
 
     RAL_color: 3000,
 
-    table_top: 200,
+    table_top: 0,
 
-    LDSP_egger: 10900,
+    LDSP_egger: 3400,
 
-    MDF_of_RAL_NCS: 8900,
+    MDF_of_RAL_NCS: 17600,
 
-    MDF_shpon: 7900,
+    MDF_shpon: 22500,
 
-    soundproofing_front: 9900,
-    soundproofing_side: 9000,
+    soundproofing_front: 10020,
+    soundproofing_side: 15200,
 
-    system_unit_suspension: 2900,
+    system_unit_suspension: 2370,
 
-    cable_channel_a: 2500,
-    cable_channel_b: 1800,
+    cable_channel_a: 3540,
+    cable_channel_b: 3540,
 
-    cable_tray: 1600,
+    cable_tray: 2450,
 
-    cutout_for_wires: 1600,
+    cutout_for_wires: 970,
 
-    socket_block: 1900,
+    socket_block: 11940,
 
-    wireless_charger: 3200,
+    wireless_charger: 3950,
 }
 
 export default globalPrices;
