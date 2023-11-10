@@ -919,11 +919,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const lightGrayColor = colorsContainer.querySelector('button.--light-gray');
             lightGrayColor.click();
             systemUnitSuspension.value = "+";
-            currentTotalPrice += globalPrices.soundproofing_side
+            currentTotalPrice += globalPrices.system_unit_suspension
             updateTotalPrice()
         } else {
             systemUnitSuspension.value = "";
-            currentTotalPrice -= globalPrices.soundproofing_side
+            currentTotalPrice -= globalPrices.system_unit_suspension
             updateTotalPrice()
             systemUnitSuspensionColor.value = "";
             selectedSystemUnitSuspensionImageKey = null;
@@ -961,11 +961,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const lightGrayColor = colorsContainer.querySelector('button.--light-gray');
             lightGrayColor.click();
             cableTray.value = "+";
-            currentTotalPrice += globalPrices.soundproofing_side
+            currentTotalPrice += globalPrices.cable_tray
             updateTotalPrice()
         } else {
             cableTray.value = "";
-            currentTotalPrice -= globalPrices.soundproofing_side
+            currentTotalPrice -= globalPrices.cable_tray
             updateTotalPrice()
             cableTrayColor.value = "";
             cableTrayImageKey = null;
@@ -1033,6 +1033,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTotalPrice();
     });
 
+    
 
     document.querySelector('.--cable-channel-a .custom-checkbox').addEventListener('change', function () {
         const colorsContainer = this.closest('.constructor__menu-container-helper');
@@ -1048,9 +1049,10 @@ document.addEventListener("DOMContentLoaded", () => {
             currentTotalPrice += globalPrices.cable_channel_a;
             updateTotalPrice();
 
-            // Отключить кабельный канал B
-            cableChannelBCheckbox.checked = false;
-            cableChannelBCheckbox.dispatchEvent(new Event('change'));
+            if (cableChannelBCheckbox.checked) {
+                cableChannelBCheckbox.checked = false;
+                cableChannelBCheckbox.dispatchEvent(new Event('change'));
+            }
         } else {
             cableChannelA.value = "";
             currentTotalPrice -= globalPrices.cable_channel_a;
@@ -1091,9 +1093,10 @@ document.addEventListener("DOMContentLoaded", () => {
             currentTotalPrice += globalPrices.cable_channel_b;
             updateTotalPrice();
 
-            // Отключить кабельный канал A
-            cableChannelACheckbox.checked = false;
-            cableChannelACheckbox.dispatchEvent(new Event('change'));
+            if (cableChannelACheckbox.checked) {
+                cableChannelACheckbox.checked = false;
+                cableChannelACheckbox.dispatchEvent(new Event('change'));
+            }
         } else {
             cableChannelB.value = "";
             currentTotalPrice -= globalPrices.cable_channel_b;
