@@ -1033,95 +1033,96 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTotalPrice();
     });
 
-    
 
-    document.querySelector('.--cable-channel-a .custom-checkbox').addEventListener('change', function () {
-        const colorsContainer = this.closest('.constructor__menu-container-helper');
-        const cableChannelA = document.getElementById('cable-channel-a');
-        const cableChannelAColor = document.getElementById('cable-channel-a-color');
-        const cableChannelBCheckbox = document.querySelector('.--cable-channel-b .custom-checkbox');
 
-        if (this.checked && colorsContainer) {
-            colorsContainer.classList.remove('--disabled');
-            const lightGrayColor = colorsContainer.querySelector('button.--light-gray');
-            lightGrayColor.click();
-            cableChannelA.value = "+";
-            currentTotalPrice += globalPrices.cable_channel_a;
-            updateTotalPrice();
+    let isCableOrganizerAdded = false;
 
-            if (cableChannelBCheckbox.checked) {
-                cableChannelBCheckbox.checked = false;
-                cableChannelBCheckbox.dispatchEvent(new Event('change'));
+
+    let cableChannelColors = document.querySelector('.--cable-channel-b').nextElementSibling
+
+    document.querySelectorAll('.--cable-channels input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            
+            if (this.checked) {
+                cableChannelColors.classList.remove('--disabled')
+                if (this.id === 'cable-channel-a-input') {
+                    uncheckOther('cable-channel-b-input');
+                    selectedCableChannelAImageKey = getCableChannelImageKey('a', getSelectedColor());
+                } else if (this.id === 'cable-channel-b-input') {
+                    uncheckOther('cable-channel-a-input');
+                    selectedCableChannelBImageKey = getCableChannelImageKey('b', getSelectedColor());
+                }
+
+            } else {
+                cableChannelColors.classList.add('--disabled')
+                if (this.id === 'cable-channel-a-input') {
+                    selectedCableChannelAImageKey = null;
+                } else if (this.id === 'cable-channel-b-input') {
+                    selectedCableChannelBImageKey = null;
+                }
             }
-        } else {
-            cableChannelA.value = "";
-            currentTotalPrice -= globalPrices.cable_channel_a;
-            updateTotalPrice();
-            cableChannelAColor.value = "";
-            selectedCableChannelAImageKey = null;
+            
             redrawCanvas();
-            colorsContainer.classList.add('--disabled');
-        }
-    });
 
-    document.querySelectorAll('.--cable-channel-a .constructor__menu-container-color-btns button').forEach(color => {
-        color.addEventListener('click', function () {
-            const colorClass = this.className;
-
-            const baseSpecificMapping = cableChannelMapping[selectedBase2] || cableChannelMapping['regular'];
-            const mappedImageKey = baseSpecificMapping[colorClass];
-
-            if (mappedImageKey) {
-                selectedCableChannelAImageKey = mappedImageKey;
-                redrawCanvas();
-                document.getElementById('cable-channel-a-color').value = this.value;
+            const isChecked = document.getElementById('cable-channel-a-input').checked || document.getElementById('cable-channel-b-input').checked;
+            if (isChecked && !isCableOrganizerAdded) {
+                currentTotalPrice += globalPrices.cable_channel_a; // Добавить стоимость
+                isCableOrganizerAdded = true;
+            } else if (!isChecked && isCableOrganizerAdded) {
+                currentTotalPrice -= globalPrices.cable_channel_a; // Убрать стоимость
+                isCableOrganizerAdded = false;
             }
+            updateTotalPrice();
         });
     });
 
-    document.querySelector('.--cable-channel-b .custom-checkbox').addEventListener('change', function () {
-        const colorsContainer = this.closest('.constructor__menu-container-helper');
-        const cableChannelB = document.getElementById('cable-channel-b');
-        const cableChannelBColor = document.getElementById('cable-channel-b-color');
-        const cableChannelACheckbox = document.querySelector('.--cable-channel-a .custom-checkbox');
-
-        if (this.checked && colorsContainer) {
-            colorsContainer.classList.remove('--disabled');
-            const lightGrayColor = colorsContainer.querySelector('button.--light-gray');
-            lightGrayColor.click();
-            cableChannelB.value = "+";
-            currentTotalPrice += globalPrices.cable_channel_b;
-            updateTotalPrice();
-
-            if (cableChannelACheckbox.checked) {
-                cableChannelACheckbox.checked = false;
-                cableChannelACheckbox.dispatchEvent(new Event('change'));
+    function uncheckOther(checkboxId) {
+        const otherCheckbox = document.getElementById(checkboxId);
+        if (otherCheckbox && otherCheckbox.checked) {
+            otherCheckbox.checked = false;
+            if (checkboxId === 'cable-channel-a-input') {
+                selectedCableChannelAImageKey = null;
+            } else if (checkboxId === 'cable-channel-b-input') {
+                selectedCableChannelBImageKey = null;
             }
-        } else {
-            cableChannelB.value = "";
-            currentTotalPrice -= globalPrices.cable_channel_b;
-            updateTotalPrice();
-            cableChannelBColor.value = "";
-            selectedCableChannelBImageKey = null;
-            redrawCanvas();
-            colorsContainer.classList.add('--disabled');
         }
-    });
+    }
 
-    document.querySelectorAll('.--cable-channel-b .constructor__menu-container-color-btns button').forEach(color => {
-        color.addEventListener('click', function () {
+    document.querySelectorAll('.constructor__menu-container-color-btns button').forEach(button => {
+        button.addEventListener('click', function () {
             const colorClass = this.className;
-
-            const baseSpecificMapping = cableChannelBMapping[selectedBase2] || cableChannelBMapping['regular'];
-            const mappedImageKey = baseSpecificMapping[colorClass];
-
-            if (mappedImageKey) {
-                selectedCableChannelBImageKey = mappedImageKey;
-                redrawCanvas();
-                document.getElementById('cable-channel-b-color').value = this.value;
+            if (document.getElementById('cable-channel-a-input').checked) {
+                selectedCableChannelAImageKey = getCableChannelImageKey('a', colorClass);
+            } else if (document.getElementById('cable-channel-b-input').checked) {
+                selectedCableChannelBImageKey = getCableChannelImageKey('b', colorClass);
             }
+            redrawCanvas();
         });
     });
+
+    function getCableChannelImageKey(channel, colorClass) {
+        if (channel === 'a') {
+            return cableChannelMapping['regular'][colorClass];
+        } else if (channel === 'b') {
+            return cableChannelBMapping['regular'][colorClass];
+        }
+    }
+
+    function getSelectedColor() {
+        const selectedButton = document.querySelector('.constructor__menu-container-color-btns button[class*="--"]:active');
+        return selectedButton ? selectedButton.className : '--light-gray';
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     let isProgrammaticChange = false;
@@ -1317,4 +1318,33 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('.constructor-modal__checkbox').nextElementSibling.style.opacity = "1"
         }
     })
+
+    let colorButtons = document.querySelectorAll('.constructor__menu-container-color-btns button');
+
+    colorButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            if (button.parentElement.querySelector('p')) {
+                button.parentElement.querySelector('p').textContent = this.value;
+            }
+
+        });
+    });
+
+    let resetButton = document.querySelector('.reset-container');
+
+    let checkboxesAll = document.querySelectorAll('.custom-checkbox');
+    let contourPButton = document.querySelector('.contour_p')
+    let baseWhiteColor = document.querySelector('.--base .constructor__menu-container-color-btns .--white')
+    let tableTopWhiteColor = document.querySelector('.--table-top .--white')
+
+    resetButton.addEventListener('click', function () {
+        checkboxesAll.forEach(function (checkbox) {
+            if (checkbox.checked === true) {
+                checkbox.click()
+                contourPButton.click()
+                baseWhiteColor.click()
+                tableTopWhiteColor.click()
+            }
+        });
+    });
 });

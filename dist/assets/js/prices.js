@@ -13,9 +13,9 @@ const  globalPrices = {
 
     LDSP_egger: 3400,
 
-    MDF_of_RAL_NCS: 17600,
+    MDF_of_RAL_NCS: 25110,
 
-    MDF_shpon: 22500,
+    MDF_shpon: 29870,
 
     soundproofing_front: 10020,
     soundproofing_side: 15200,
@@ -25,7 +25,7 @@ const  globalPrices = {
     cable_channel_a: 3540,
     cable_channel_b: 3540,
 
-    cable_tray: 2450,
+    cable_tray: 3710,
 
     cutout_for_wires: 970,
 

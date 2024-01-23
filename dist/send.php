@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Дополнительные заголовки
-    $headers = "From: ridonor517@ksyhtc.com\r\n";  // Замените на ваш email или email вашего веб-сайта
+    $headers = "From: info@a-vision.space\r\n";  // Замените на ваш email или email вашего веб-сайта
     $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
     // Отправляем почту
