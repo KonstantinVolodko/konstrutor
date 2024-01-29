@@ -1330,33 +1330,39 @@ function updateCableChannelImages(selectedBase) {
         let svg = container.querySelector('svg');
         let content = container.querySelector('.info-container__content');
         let video = container.querySelector('video'); // Находим элемент видео внутри контейнера
-
+        let gif = container.querySelector('img'); // Находим элемент gif внутри контейнера
+    
         container.addEventListener('mouseenter', function () {
             // Скрываем все info-container__content окна
             document.querySelectorAll('.info-container__content').forEach(function (otherContent) {
                 otherContent.style.display = 'none';
                 otherContent.classList.remove('visible');
             });
-
+    
             // Показываем только текущее окно
             content.style.display = 'flex';
             setTimeout(() => {
                 content.classList.add('visible');
             }, 10);
-
+    
             // Перезапускаем видео, если оно есть
             if (video) {
                 video.currentTime = 0; // Сбрасываем текущее время видео на начало
                 video.play(); // Запускаем видео
             }
+    
+            // Перезагружаем gif, если оно есть
+            if (gif) {
+                gif.src = gif.src; // Перезагружаем gif
+            }
         });
-
+    
         container.addEventListener('mouseleave', function () {
             content.classList.remove('visible');
             setTimeout(() => {
                 content.style.display = 'none';
             }, 300); // Должно соответствовать длительности анимации в CSS (0.3s = 300ms)
-
+    
             // Останавливаем видео, если оно играет
             if (video && !video.paused) {
                 video.pause();
