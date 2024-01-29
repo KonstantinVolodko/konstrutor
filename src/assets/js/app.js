@@ -795,6 +795,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateTotalPrice()
             }
         });
+
+
     }
 
     function getCableTrayImageKey(base, color) {
@@ -1037,16 +1039,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let selectedCableChannel = {
-        A: {
-            color: '--light-gray',
-            enabled: false
-        },
-        B: {
-            color: '--light-gray',
-            enabled: false
-        }
-    };
 
 
 
@@ -1103,7 +1095,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    
+
 
     document.querySelectorAll('.constructor__menu-container-color-btns button').forEach(button => {
         button.addEventListener('click', function () {
@@ -1385,9 +1377,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.querySelectorAll('video').forEach(e => {
-        e.addEventListener("click", function (event) {
-            event.preventDefault();
-        })
-    })
+
 });
