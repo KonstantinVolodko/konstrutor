@@ -693,6 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll('.--base .constructor__menu-container-buttons button').forEach(base => {
             base.addEventListener('click', function () {
 
+
                 if (selectedBase) {
                     document.querySelector(`.${selectedBase}`).classList.remove('--active');
                 }
@@ -1036,8 +1037,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    let selectedCableChannel = {
+        A: {
+            color: '--light-gray',
+            enabled: false
+        },
+        B: {
+            color: '--light-gray',
+            enabled: false
+        }
+    };
 
-    
 
 
 
@@ -1048,7 +1058,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.--cable-channels input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function () {
-            
+
             if (this.checked) {
                 cableChannelColors.classList.remove('--disabled')
                 if (this.id === 'cable-channel-a-input') {
@@ -1067,7 +1077,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectedCableChannelBImageKey = null;
                 }
             }
-            
+
             redrawCanvas();
 
             const isChecked = document.getElementById('cable-channel-a-input').checked || document.getElementById('cable-channel-b-input').checked;
@@ -1093,6 +1103,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+    
 
     document.querySelectorAll('.constructor__menu-container-color-btns button').forEach(button => {
         button.addEventListener('click', function () {
@@ -1107,18 +1118,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function getCableChannelImageKey(channel, colorClass) {
-    let baseKey = selectedBase2; // 'selectedBase2' должен содержать ключ выбранной основы, например 'regular', 'cvant', 'art'
+        let baseKey = selectedBase2; // 'selectedBase2' должен содержать ключ выбранной основы, например 'regular', 'cvant', 'art'
 
-    // Проверяем, существует ли маппинг для данной основы
-    if (channel === 'a' && cableChannelMapping[baseKey]) {
-        return cableChannelMapping[baseKey][colorClass];
-    } else if (channel === 'b' && cableChannelBMapping[baseKey]) {
-        return cableChannelBMapping[baseKey][colorClass];
+        // Проверяем, существует ли маппинг для данной основы
+        if (channel === 'a' && cableChannelMapping[baseKey]) {
+            return cableChannelMapping[baseKey][colorClass];
+        } else if (channel === 'b' && cableChannelBMapping[baseKey]) {
+            return cableChannelBMapping[baseKey][colorClass];
+        }
+
+        // Возвращаем значение по умолчанию, если нет специфического маппинга для основания
+        return cableChannelMapping['regular'][colorClass];
     }
-    
-    // Возвращаем значение по умолчанию, если нет специфического маппинга для основания
-    return cableChannelMapping['regular'][colorClass];
-}
 
     function getSelectedColor() {
         const selectedButton = document.querySelector('.constructor__menu-container-color-btns button[class*="--"]:active');
@@ -1297,33 +1308,33 @@ document.addEventListener("DOMContentLoaded", () => {
         let svg = container.querySelector('svg');
         let content = container.querySelector('.info-container__content');
         let video = container.querySelector('video'); // Находим элемент видео внутри контейнера
-    
+
         container.addEventListener('mouseenter', function () {
             // Скрываем все info-container__content окна
             document.querySelectorAll('.info-container__content').forEach(function (otherContent) {
                 otherContent.style.display = 'none';
                 otherContent.classList.remove('visible');
             });
-    
+
             // Показываем только текущее окно
             content.style.display = 'flex';
             setTimeout(() => {
                 content.classList.add('visible');
             }, 10);
-    
+
             // Перезапускаем видео, если оно есть
             if (video) {
                 video.currentTime = 0; // Сбрасываем текущее время видео на начало
                 video.play(); // Запускаем видео
             }
         });
-    
+
         container.addEventListener('mouseleave', function () {
             content.classList.remove('visible');
             setTimeout(() => {
                 content.style.display = 'none';
             }, 300); // Должно соответствовать длительности анимации в CSS (0.3s = 300ms)
-    
+
             // Останавливаем видео, если оно играет
             if (video && !video.paused) {
                 video.pause();
@@ -1364,13 +1375,19 @@ document.addEventListener("DOMContentLoaded", () => {
     resetButton.addEventListener('click', function () {
 
         contourPButton.click()
-                baseWhiteColor.click()
-                tableTopWhiteColor.click()
+        baseWhiteColor.click()
+        tableTopWhiteColor.click()
         checkboxesAll.forEach(function (checkbox) {
             if (checkbox.checked === true) {
                 checkbox.click()
-                
+
             }
         });
     });
+
+    document.querySelectorAll('video').forEach(e => {
+        e.addEventListener("click", function (event) {
+            event.preventDefault();
+        })
+    })
 });
