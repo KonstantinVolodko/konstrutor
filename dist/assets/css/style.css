@@ -711,6 +711,11 @@ form.sent .wpcf7-response-output {
     justify-content: space-between;
 }
 
+.header .menu__bot div {
+    font-size: 1.6rem;
+    line-height: normal;
+}
+
 .header .menu .close {
     cursor: pointer;
     position: absolute;
@@ -7231,7 +7236,7 @@ body {
 
 @media (max-width: 500px) {
     .constructor__menu-container {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -7270,6 +7275,12 @@ body {
 @media screen and (max-width: 1024px) {
     .constructor__menu-container-buttons button {
         width: 46.4rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .constructor__menu-container-buttons button {
+        width: 100%;
     }
 }
 
@@ -7333,6 +7344,14 @@ body {
     cursor: pointer;
 }
 
+@media (max-width: 500px) {
+    .constructor__menu-container-colors .info-container {
+        width: 2.2rem;
+        height: 2.2rem;
+        right: -4rem;
+    }
+}
+
 .constructor__menu-container-colors .info-container svg {
     width: 100%;
     height: 100%;
@@ -7351,6 +7370,7 @@ body {
 @media screen and (max-width: 500px) {
     .constructor__menu-container-colors {
         gap: 1.5rem;
+        width: 90%;
     }
 
     .constructor__menu-container-colors .constructor__menu-container-color-btns {
@@ -7406,6 +7426,16 @@ body {
     justify-content: center;
 }
 
+@media (max-width: 500px) {
+    .constructor__menu-container-helper {
+        width: 90%;
+    }
+
+    .constructor__menu-container-helper .constructor__menu-container-colors {
+        width: 100%;
+    }
+}
+
 .constructor__menu-container-helper .constructor__menu-container-colors {
     border: none;
 }
@@ -7418,6 +7448,14 @@ body {
     cursor: pointer;
 }
 
+@media (max-width: 500px) {
+    .constructor__menu-container-helper .info-container {
+        width: 2.2rem;
+        height: 2.2rem;
+        right: -4rem;
+    }
+}
+
 .constructor__menu-container-helper .info-container svg {
     width: 100%;
     height: 100%;
@@ -7428,6 +7466,10 @@ body {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.constructor__menu-container-helper .info-container video::-webkit-media-controls {
+    display: none !important;
 }
 
 @-webkit-keyframes fillBlack {
