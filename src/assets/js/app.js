@@ -515,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
         '--brown': 'tableTopBrown',
     };
 
-    const cableChannelMapping = {
+    const cableChannelAMapping = {
         'regular': {
             '--light-gray': 'cableChannelALightGray',
             '--dark-gray': 'cableChannelADarkGray',
@@ -721,6 +721,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectedBase2 = this.dataset.baseKey;
                 baseInput.value = this.value; // Устанавливаем значение кнопки в input с id="base"
 
+
                 const cableTrayCheckbox = document.querySelector('.--cable-tray .custom-checkbox');
                 if (cableTrayCheckbox && cableTrayCheckbox.checked) {
                     // Если чекбокс включен, обновляем картинку для кабельного лотка
@@ -763,6 +764,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     nextColorsContainer.click()
                 }
 
+                updateCableChannelImages(selectedBase2);
             });
         });
 
@@ -798,6 +800,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
+
+   
 
     function getCableTrayImageKey(base, color) {
         if (base === 'cvant') {
@@ -1043,46 +1047,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let isCableOrganizerAdded = false;
 
 
-    let cableChannelColors = document.querySelector('.--cable-channel-b').nextElementSibling
 
-    document.querySelectorAll('.--cable-channels input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', function () {
 
-            if (this.checked) {
-                cableChannelColors.classList.remove('--disabled')
-                if (this.id === 'cable-channel-a-input') {
-                    uncheckOther('cable-channel-b-input');
-                    selectedCableChannelAImageKey = getCableChannelImageKey('a', getSelectedColor());
-                } else if (this.id === 'cable-channel-b-input') {
-                    uncheckOther('cable-channel-a-input');
-                    selectedCableChannelBImageKey = getCableChannelImageKey('b', getSelectedColor());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function initializeCableChannels() {
+        let isCableOrganizerAdded = false;
+        let cableChannelColors = document.querySelector('.--cable-channel-b').nextElementSibling;
+    
+        document.querySelectorAll('.--cable-channels input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    cableChannelColors.classList.remove('--disabled');
+                    if (this.id === 'cable-channel-a-input') {
+                        uncheckOther('cable-channel-b-input');
+                        updateCableChannelImages(selectedBase2);
+                    } else if (this.id === 'cable-channel-b-input') {
+                        uncheckOther('cable-channel-a-input');
+                        updateCableChannelImages(selectedBase2);
+                    }
+                } else {
+                    cableChannelColors.classList.add('--disabled');
+                    if (this.id === 'cable-channel-a-input') {
+                        selectedCableChannelAImageKey = null;
+                    } else if (this.id === 'cable-channel-b-input') {
+                        selectedCableChannelBImageKey = null;
+                    }
                 }
-
-            } else {
-                cableChannelColors.classList.add('--disabled')
-                if (this.id === 'cable-channel-a-input') {
-                    selectedCableChannelAImageKey = null;
-                } else if (this.id === 'cable-channel-b-input') {
-                    selectedCableChannelBImageKey = null;
+    
+                const isChecked = document.getElementById('cable-channel-a-input').checked || document.getElementById('cable-channel-b-input').checked;
+                if (isChecked && !isCableOrganizerAdded) {
+                    currentTotalPrice += globalPrices.cable_channel_a; // Add the price
+                    isCableOrganizerAdded = true;
+                } else if (!isChecked && isCableOrganizerAdded) {
+                    currentTotalPrice -= globalPrices.cable_channel_a; // Remove the price
+                    isCableOrganizerAdded = false;
                 }
-            }
-
-            redrawCanvas();
-
-            const isChecked = document.getElementById('cable-channel-a-input').checked || document.getElementById('cable-channel-b-input').checked;
-            if (isChecked && !isCableOrganizerAdded) {
-                currentTotalPrice += globalPrices.cable_channel_a; // Добавить стоимость
-                isCableOrganizerAdded = true;
-            } else if (!isChecked && isCableOrganizerAdded) {
-                currentTotalPrice -= globalPrices.cable_channel_a; // Убрать стоимость
-                isCableOrganizerAdded = false;
-            }
-            updateTotalPrice();
+                updateTotalPrice();
+            });
         });
-    });
+    
+        document.querySelectorAll('.--cable-channels .constructor__menu-container-color-btns button').forEach(button => {
+            button.addEventListener('click', function () {
+                const colorClass = this.className;
+                if (document.getElementById('cable-channel-a-input').checked) {
+                    selectedCableChannelAImageKey = getCableChannelImageKey('a', colorClass, selectedBase2);
+                } else if (document.getElementById('cable-channel-b-input').checked) {
+                    selectedCableChannelBImageKey = getCableChannelImageKey('b', colorClass, selectedBase2);
+                }
+                redrawCanvas();
+            });
+        });
+    }
 
     function uncheckOther(checkboxId) {
         const otherCheckbox = document.getElementById(checkboxId);
@@ -1097,30 +1127,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    document.querySelectorAll('.--cable-channels .constructor__menu-container-color-btns button').forEach(button => {
-        button.addEventListener('click', function () {
-            const colorClass = this.className;
-            if (document.getElementById('cable-channel-a-input').checked) {
-                selectedCableChannelAImageKey = getCableChannelImageKey('a', colorClass);
-            } else if (document.getElementById('cable-channel-b-input').checked) {
-                selectedCableChannelBImageKey = getCableChannelImageKey('b', colorClass);
-            }
-            redrawCanvas();
-        });
-    });
+    
 
     function getCableChannelImageKey(channel, colorClass) {
         let baseKey = selectedBase2; // 'selectedBase2' должен содержать ключ выбранной основы, например 'regular', 'cvant', 'art'
 
         // Проверяем, существует ли маппинг для данной основы
-        if (channel === 'a' && cableChannelMapping[baseKey]) {
-            return cableChannelMapping[baseKey][colorClass];
+        if (channel === 'a' && cableChannelAMapping[baseKey]) {
+            return cableChannelAMapping[baseKey][colorClass];
         } else if (channel === 'b' && cableChannelBMapping[baseKey]) {
             return cableChannelBMapping[baseKey][colorClass];
         }
 
         // Возвращаем значение по умолчанию, если нет специфического маппинга для основания
-        return cableChannelMapping['regular'][colorClass];
+        return cableChannelAMapping['regular'][colorClass];
     }
 
     function getSelectedColor() {
@@ -1129,7 +1149,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
+function updateCableChannelImages(selectedBase) {
+    const selectedColor = getSelectedColor();
+    
+    if (document.getElementById('cable-channel-a-input').checked) {
+        selectedCableChannelAImageKey = getCableChannelImageKey('a', selectedColor, selectedBase);
+    } else if (document.getElementById('cable-channel-b-input').checked) {
+        selectedCableChannelBImageKey = getCableChannelImageKey('b', selectedColor, selectedBase);
+    }
+    
+    redrawCanvas();
+}
 
 
 
@@ -1377,5 +1407,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    initializeCableChannels();
 
 });
