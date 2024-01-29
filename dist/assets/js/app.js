@@ -1097,7 +1097,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    document.querySelectorAll('.constructor__menu-container-color-btns button').forEach(button => {
+    document.querySelectorAll('.--cable-channels .constructor__menu-container-color-btns button').forEach(button => {
         button.addEventListener('click', function () {
             const colorClass = this.className;
             if (document.getElementById('cable-channel-a-input').checked) {
