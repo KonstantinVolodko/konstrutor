@@ -7468,6 +7468,12 @@ body {
     height: 100%;
 }
 
+@media (max-width: 500px) {
+    .constructor__menu-container-helper .info-container video {
+        display: none;
+    }
+}
+
 .constructor__menu-container-helper .info-container video::-webkit-media-controls {
     display: none !important;
 }
@@ -7477,6 +7483,12 @@ body {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 500px) {
+    .constructor__menu-container-helper .info-container img {
+        display: none;
+    }
 }
 
 @-webkit-keyframes fillBlack {

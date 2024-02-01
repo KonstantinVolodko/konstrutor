@@ -501,6 +501,10 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
+
+            @include breakpoint($sm-bp) {
+                display: none;
+              }
         }
 
         video::-webkit-media-controls {
@@ -511,6 +515,10 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
+
+            @include breakpoint($sm-bp) {
+                display: none;
+              }
         }
     }
 
